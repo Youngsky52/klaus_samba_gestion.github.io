@@ -1,0 +1,43 @@
+
+
+{% extends 'base.html' %}
+
+{% block contenu %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block titre %}Inscription{% endblock %}</title>
+
+</head>
+<body>
+        <h1>bien recu</h1>
+        <br>
+           <center>   <form action="ajouter" method="POST">
+   {% csrf_token %}
+   <label>ID</label>
+            <div>{{ form.id }}</div>
+             <label>Nom</label>
+            <div>{{ form.nom }}</div>
+             <label>Prenom</label>
+            <div>{{ form.prenom }}</div>
+             <label>Sexe</label>
+            <div>{{ form.sexe }}</div>
+             <label>Age</label>
+            <div>{{ form.age }}</div>
+             <label>Email</label>
+            <div>{{ form.email }}</div>
+             <label>Contact</label>
+            <div>{{ form.tel }}</div>
+<div>
+    <button type="submit">Ajouter</button></div>
+
+
+        </form>
+</center>
+
+        {% endblock %}
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

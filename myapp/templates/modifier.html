@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block contenu %}
+    <title>{% block titre %}Modification{% endblock %}</title>
+
+</head>
+<body>
+<h4><center>Editer</center></h4>
+<center>
+<form action="/mise_a_j/{{ etudiant.id }}" method="post">
+ {% csrf_token %}
+    <table>
+        <tr>
+            <td> <input name="id" value=" {{ etudiant.id }}" required></td>
+        </tr>
+ <tr>
+            <td> <input name="nom" value=" {{ etudiant.nom }}" required></td>
+        </tr>
+ <tr>
+            <td> <input name="prenom" value=" {{ etudiant.prenom }}" required></td>
+        </tr>
+ <tr>
+            <td> <input name="sexe" value=" {{ etudiant.sexe }}" required></td>
+        </tr>
+ <tr>
+            <td> <input name="age" value=" {{ etudiant.age }}" required></td>
+        </tr>
+ <tr>
+            <td> <input name="email" value=" {{ etudiant.email }}" required></td>
+        </tr>
+ <tr>
+            <td> <input name="tel" value=" {{ etudiant.tel }}" required></td>
+        </tr>
+
+        <tr><td>
+            <button type="submit">valider</button></td></tr>
+
+
+    </table>
+
+</form>
+
+</center>
+
+{% endblock %}
+
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+
+
+{% extends 'base.html' %}
+
+{% block contenu %}
+    <title>{% block titre %}liste des etudiants{% endblock %}</title>
+
+<body>
+<h1><center>les etudiants de ESTIM </center> </h1>
+<br>
+
+<br>
+<br>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered table-hover table-dark">
+            <thead>
+            <tr>
+                <th>ID</th>
+             <th>NOM</th>
+             <th>PRENOM</th>
+             <th>SEXE</th>
+             <th>AGE</th>
+             <th>EMAIL</th>
+             <th>CONTACT</th>
+                <th>ACTIONS</th>
+            </tr>
+            </thead>
+            {% for i in etudiant %}
+            <tbody>
+            <tr>
+                <td>{{i.id}}</td>
+                 <td>{{i.nom}}</td>
+                 <td> {{i.prenom}}</td>
+                 <td> {{i.sexe}}</td>
+                 <td> {{i.age}} ans</td>
+                 <td>{{i.email}}</td>
+                 <td>{{ i.tel }}</td>
+             <td> <a class="mo" href="modifier/{{ i.id }}" >Modifier</a>
+             <a class="su" href="supprimer/{{ i.id }}" >supprimer</a></td>
+            </tr>
+</tbody>
+
+            {% endfor %}
+
+
+        </table>
+        </div>
+ <a href="form_l">Ajouter un nouveau</a>
+{% endblock %}
+
+<script src="js/bootstrap.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
